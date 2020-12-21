@@ -389,7 +389,7 @@ Requires the user to have first been successfully logged in, before logging out.
 
 # **4. System Architecture**
 
-- ![System Architecture Diagram](Images/Architecture_Diagram.png)
+- ![System Architecture Diagram](Images/Architecture_Diagram.PNG)
 
 # **5.1Data flow Diagram**
 
