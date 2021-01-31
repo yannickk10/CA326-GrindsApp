@@ -84,3 +84,8 @@ button:focus {
   top: 10px;
   height: 100%;
 }
+
+.sign-up-wrapper {
+  left: 0;
+  width: 50%;
+}
