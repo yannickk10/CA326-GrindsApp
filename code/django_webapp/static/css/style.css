@@ -78,3 +78,9 @@ button:active {
 button:focus {
   outline: none
 }
+
+.form-wrapper {
+  position: relative;
+  top: 10px;
+  height: 100%;
+}
