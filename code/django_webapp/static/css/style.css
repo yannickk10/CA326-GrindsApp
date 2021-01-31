@@ -50,3 +50,19 @@ a {
   margin: 8px 0;
   width: 100%;
 }
+
+button {
+  border: 3px #2196f3;
+  border-radius: 20px;
+  margin: 8px 0;
+  outline: none;
+  padding: 12px;
+  box-sizing: border-box;
+  border-color: #2196f3;
+  box-shadow: 0 0 20px 0 #2196f3;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 17px;
+  color: #fff;
+  background-color: #2196f3;
+}
