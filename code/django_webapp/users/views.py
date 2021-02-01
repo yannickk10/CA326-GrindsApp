@@ -14,6 +14,10 @@ def student_register(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
+            user = form.cleaned_data.get('username')
+            messages.success(request, 'Account was created for ' + user)
+
+            return redirect('login')
 
     context = {'form': form}
     return render(request, 'users/student_register.html', context)
@@ -25,7 +29,11 @@ def tutor_register(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
+            user = form.cleaned_data.get('username')
+            messages.success(request, 'Account was created for ' + user)
 
+            return redirect('login')
+            
     context = {'form': form}
     return render(request, 'users/tutor_register.html', context)
 
