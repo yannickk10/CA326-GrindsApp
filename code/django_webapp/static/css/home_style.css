@@ -16,14 +16,14 @@
 .navbar{
   width: 85%;
   margin: auto;
-  padding: auto;
+  padding: 35px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .logo{
-  width: 180px;
+  width: 120px;
   cursor: pointer;
 }
 
@@ -37,12 +37,12 @@
 }
 .navbar ul li a{
   text-decoration: none;
-  color #fff;
+  color: #fff;
   text-transform: uppercase;
 }
 
 .navbar ul li::after{
-  content: ' ';
+  content: '';
   height: 3px;
   width: 0;
   background: #009688;
@@ -108,7 +108,4 @@ span{
 
 button:hover span{
   width: 100%;
-}
-
-button:hover{
 }
