@@ -1,7 +1,7 @@
 *{
   margin: 0;
 	padding: 0;
-	font-family: font-family: 'Poppins', sans-serif;
+	font-family: 'Poppins', sans-serif;
 }
 
 .banner{
@@ -35,7 +35,18 @@
 }
 
 }
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
 .navbar ul li a{
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.home_content a{
   text-decoration: none;
   color: #fff;
   text-transform: uppercase;
