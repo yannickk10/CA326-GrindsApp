@@ -52,19 +52,19 @@ a {
 }
 
 button {
-  border: 3px #2196f3;
+  border: 3px #009688;
   border-radius: 20px;
   margin: 8px 0;
   outline: none;
   padding: 12px;
   box-sizing: border-box;
-  border-color: #2196f3;
-  box-shadow: 0 0 20px 0 #2196f3;
+  border-color: #009688;
+  box-shadow: 0 0 20px 0 #009688;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   font-size: 17px;
   color: #fff;
-  background-color: #2196f3;
+  background-color: #009688;
 }
 
 
@@ -102,8 +102,8 @@ button:focus {
 }
 
 .overlay {
-  background: #2196f3;
-  background: linear-gradient(to right, #90caf9, #2196f3) no-repeat 0 0 / cover;
+  background: #009688;
+  background: linear-gradient(to right, #70c4bc, #009688) no-repeat 0 0 / cover;
   color: #fff;
   position: relative;
   left: -100%;
