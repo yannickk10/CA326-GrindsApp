@@ -4,10 +4,16 @@
       <div class="form-wrapper sign-up-wrapper">
         <form method="POST" action="">
             {%csrf_token%}
-            {% for field in form %}
-              <label>{{field.label_tag}}<label>
-              <input type="text" name="" value="{{field.value}}">
-            {% endfor %}
+              <label>First Name</label>
+              {{form.first_name}}
+              <label>Username</label>
+              {{form.username}}
+              <label>Email</label>
+              {{form.email}}
+              <label>Password</label>
+              {{form.password1}}
+              <label>Re-enter password</label>
+              {{form.password2}}
           <button type="submit" name="Sign Up">Sign up</button>
           <p>Already have an account? <a href="{% url 'login' %}">Log in</a></p>
         </form>
@@ -17,9 +23,7 @@
         <div class="overlay">
           <div class="overlay-panel overlay-right">
             <h1>Student Register</h1>
-            {%for message in messages%}
-              <p>{{message}}</p>
-            {%endfor%}
+            <p>{{form.errors}}</p>
           </div>
         </div>
       </div>
