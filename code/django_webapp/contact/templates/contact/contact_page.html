@@ -13,14 +13,18 @@
     {% else %}
       <title>TutorO</title>
     {% endif %}
-    <div class="banner">
+    <div class="banner-contact">
         <div class="navbar">
-          <img src="../../static/images/TutorO_Logo.png" class="logo">
+          <a href="{% url 'home' %}"><img src="../../static/images/TutorO_Logo.png" class="logo"></a>
           <ul>
               <li><a href="{% url 'login' %}">Sign in</a></li>
           </ul>
         </div>
-
+        <section class="contact">
+          <div class="content">
+            <h2>Contact Us</h2>
+            <p>If you have any queries or issues please contact us by filling in the for below</p>
+          </div>
         <div class="container">
             <div class="contactInfo">
                   <div class="box">
@@ -58,21 +62,19 @@
                       <input type="text" name="" required="required">
                       <span>Email</span>
                   </div><div class="inputBox">
-                      <input type="text" name="" required="required">
+                      <textarea required="required"> </textarea>
                       <span>Type your Message...</span>
                   </div>
                   <div class="inputBox">
                       <input type="submit" name="" required="Send">
                   </div>
-
                 </form>
             </div>
         </div>
+      </section>
     </div>
-
   </head>
   <body>
     {% block content %}{% endblock %}
-
   </body>
 </html>
