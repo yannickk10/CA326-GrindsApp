@@ -18,6 +18,7 @@ from django.urls import path
 from users import views as user_views
 from home import  views as home_views
 from contact import views as contact_view
+from dashboard import views as dashboard_view
 
 
 urlpatterns = [
@@ -27,5 +28,7 @@ urlpatterns = [
     path('student-register/', user_views.student_register, name="student-register"),
     path('tutor-register/', user_views.tutor_register, name="tutor-register"),
     path('contact-page/', contact_view.contact_view, name="contact-page"),
-
+    path('student-dashboard/', dashboard_view.contact_view, name="student-dashboard"),
+    path('tutor-dashboard/', dashboard.tutor_dash_view, name="tutor-dash-page"),
+    path('student-dashboard/', dashboard.student_dash_view, name="student-dash-page")
 ]
