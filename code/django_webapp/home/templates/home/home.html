@@ -12,7 +12,7 @@
     {% else %}
       <title>TutorO</title>
     {% endif %}
-    <div class="banner">
+    <div class="banner-home">
         <div class="navbar">
           <img src="../../static/images/TutorO_Logo.png" class="logo">
           <ul>
@@ -24,7 +24,7 @@
       <div class="home_content">
           <h1> Welcome to TutorO</h1>
           <p> Are you a student or a Tutor? </p>
-          <div>
+          <div class="buttons">
                 <button type="button"><span></span><a href ="{% url 'student-register' %}">I'm a Student</a></button>
                 <button type="button"><span></span><a href ="{% url 'tutor-register' %}">I'm a Tutor</a></button>
           </div>
