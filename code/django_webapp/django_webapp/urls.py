@@ -28,7 +28,6 @@ urlpatterns = [
     path('student-register/', user_views.student_register, name="student-register"),
     path('tutor-register/', user_views.tutor_register, name="tutor-register"),
     path('contact-page/', contact_view.contact_view, name="contact-page"),
-    path('student-dashboard/', dashboard_view.contact_view, name="student-dashboard"),
-    path('tutor-dashboard/', dashboard.tutor_dash_view, name="tutor-dash-page"),
-    path('student-dashboard/', dashboard.student_dash_view, name="student-dash-page")
+    path('tutor-dashboard/', dashboard_view.tutor_dash_view, name="tutor-dash-page"),
+    path('student-dashboard/', dashboard_view.student_dash_view, name="student-dash-page")
 ]
