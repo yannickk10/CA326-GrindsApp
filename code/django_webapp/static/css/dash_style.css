@@ -2,6 +2,15 @@ body {
 	padding: 0;
 	margin: 0;
 }
+
+prof{
+	background-color: #fff;
+}
+
+prof:hover{
+	cursor: pointer;
+}
+
 nav {
 	position: fixed;
 	z-index: 10;
