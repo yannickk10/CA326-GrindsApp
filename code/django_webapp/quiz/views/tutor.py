@@ -48,3 +48,14 @@ class QuizUpdateView(UpdateView):
     def get_context_data(self, **kwargs):
         kwargs['questions'] = self.get_object().questions.annotate(answers_count=Count('answers'))
         return super().get_context_data(**kwargs)
+        
+    def get_queryset(self):
+            '''
+            This method is an implicit object-level permission management
+            This view will only match the ids of existing quizzes that belongs
+            to the logged in user.
+            '''
+            return self.request.user.quizzes.all()
+
+        def get_success_url(self):
+            return reverse('tutor:quiz_change', kwargs={'pk': self.object.pk})
