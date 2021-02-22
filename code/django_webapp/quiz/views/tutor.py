@@ -38,3 +38,13 @@ class QuizCreateView(CreateView):
         quiz.save()
         messages.success(self.request, 'The quiz was created with success! Go ahead and add some questions now.')
         return redirect('tutor:quiz_change', quiz.pk)
+
+class QuizUpdateView(UpdateView):
+    model = Quiz
+    fields = ('name', 'subject', )
+    context_object_name = 'quiz'
+    template_name = 'quiz/tutors/quiz_change_form.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['questions'] = self.get_object().questions.annotate(answers_count=Count('answers'))
+        return super().get_context_data(**kwargs)
