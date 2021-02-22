@@ -57,3 +57,14 @@ class Student(models.Model):
 
     def __str__(self):
         return self.user.username
+
+class TakenQuiz(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='taken_quizzes')
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name='taken_quizzes')
+    score = models.FloatField()
+    date = models.DateTimeField(auto_now_add=True)
+
+
+class StudentAnswer(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='quiz_answers')
+    answer = models.ForeignKey(Answer, on_delete=models.CASCADE, related_name='+')
