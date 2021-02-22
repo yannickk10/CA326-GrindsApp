@@ -19,9 +19,12 @@ from users import views as user_views
 from home import  views as home_views
 from contact import views as contact_view
 from dashboard import views as dashboard_view
+from quiz.views import tutor
+
 
 
 urlpatterns = [
+    path('', include('quiz.urls')),
     path('', home_views.home_view, name='home'),
     path('admin/', admin.site.urls),
     path('login/', user_views.login_page, name="login"),
