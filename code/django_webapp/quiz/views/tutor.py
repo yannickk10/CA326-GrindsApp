@@ -48,7 +48,7 @@ class QuizUpdateView(UpdateView):
     def get_context_data(self, **kwargs):
         kwargs['questions'] = self.get_object().questions.annotate(answers_count=Count('answers'))
         return super().get_context_data(**kwargs)
-        
+
     def get_queryset(self):
             '''
             This method is an implicit object-level permission management
@@ -57,5 +57,19 @@ class QuizUpdateView(UpdateView):
             '''
             return self.request.user.quizzes.all()
 
-        def get_success_url(self):
+    def get_success_url(self):
             return reverse('tutor:quiz_change', kwargs={'pk': self.object.pk})
+
+class QuizDeleteView(DeleteView):
+    model = Quiz
+    context_object_name = 'quiz'
+    template_name = 'quiz/tutors/quiz_delete_confirm.html'
+    success_url = reverse_lazy('tutor:quiz_change_list')
+
+    def delete(self, request, *args, **kwargs):
+        quiz = self.get_object()
+        messages.success(request, 'The quiz %s was deleted with success!' % quiz.name)
+        return super().delete(request, *args, **kwargs)
+
+    def get_queryset(self):
+        return self.request.user.quizzes.all()
