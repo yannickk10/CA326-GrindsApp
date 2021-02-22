@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'home.apps.HomeConfig',
     'users.apps.UsersConfig',
+    'quiz.apps.QuizConfig',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -126,3 +128,11 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
     '/var/www/static/',
 ]
+
+# Custom Django auth settings
+
+AUTH_USER_MODEL = 'quiz.User'
+
+# Third party apps configuration
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
