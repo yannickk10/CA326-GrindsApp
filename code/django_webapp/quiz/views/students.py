@@ -69,3 +69,14 @@ def take_quiz(request, pk):
         'form': form,
         'progress': progress
     })
+
+class TakenQuizListView(ListView):
+    model = TakenQuiz
+    context_object_name = 'taken_quizzes'
+    template_name = 'quiz/students/taken_quiz_list.html'
+
+    def get_queryset(self):
+        queryset = self.request.user.student.taken_quizzes \
+            .select_related('quiz', 'quiz__subject') \
+            .order_by('quiz__name')
+        return queryset
