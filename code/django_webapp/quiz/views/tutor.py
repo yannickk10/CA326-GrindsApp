@@ -26,3 +26,15 @@ class QuizListView(ListView):
             .annotate(questions_count=Count('questions', distinct=True)) \
             .annotate(taken_count=Count('taken_quizzes', distinct=True))
         return queryset
+
+class QuizCreateView(CreateView):
+    model = Quiz
+    fields = ('name', 'subject', )
+    template_name = 'quiz/tutors/quiz_add_form.html'
+
+    def form_valid(self, form):
+        quiz = form.save(commit=False)
+        quiz.owner = self.request.user
+        quiz.save()
+        messages.success(self.request, 'The quiz was created with success! Go ahead and add some questions now.')
+        return redirect('tutor:quiz_change', quiz.pk)
