@@ -4,36 +4,36 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
-from .forms import CreateUserForm
+from .forms import TutorSignUpForm, StudentSignUpForm
 from django.contrib import messages
 
 def student_register(request):
-    form = CreateUserForm()
-
     if request.method == 'POST':
-        form = CreateUserForm(request.POST)
+        form = StudentSignUpForm(request.POST)
         if form.is_valid():
-            form.save()
-            user = form.cleaned_data.get('username')
-            messages.success(request, 'Account was created for ' + user)
-
-            return redirect('login')
+            user = form.save()
+            usern = form.cleaned_data.get('first_name')
+            messages.success(request, 'Account was created for ' + usern)
+            login(request, user)
+            return redirect('students:quiz_list')
+    else:
+        form = TutorSignUpForm()
 
     context = {'form': form}
     return render(request, 'users/student_register.html', context)
 
 def tutor_register(request):
-    form = CreateUserForm()
-
     if request.method == 'POST':
-        form = CreateUserForm(request.POST)
+        form = TutorSignUpForm(request.POST)
         if form.is_valid():
-            form.save()
-            user = form.cleaned_data.get('username')
-            messages.success(request, 'Account was created for ' + user)
+            user = form.save()
+            usern = form.cleaned_data.get('first_name')
+            messages.success(request, 'Account was created for ' + usern)
+            login(request, user)
+            return redirect('tutor:quiz_change_list')
+    else:
+        form = TutorSignUpForm()
 
-            return redirect('login')
-            
     context = {'form': form}
     return render(request, 'users/tutor_register.html', context)
 
