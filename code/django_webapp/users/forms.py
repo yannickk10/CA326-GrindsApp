@@ -19,3 +19,25 @@ class TutorSignUpForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+class StudentSignUpForm(UserCreationForm):
+    first_name = forms.CharField(required=True, max_length=50)
+    email = forms.EmailField(required=True)
+    interests = forms.ModelMultipleChoiceField(
+        queryset=Subject.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        required=True
+    )
+
+    class Meta(UserCreationForm.Meta):
+        model = User
+        fields = ['first_name', 'username', 'email', 'password1', 'password2']
+
+    @transaction.atomic
+    def save(self):
+        user = super().save(commit=False)
+        user.is_student = True
+        user.save()
+        student = Student.objects.create(user=user)
+        student.interests.add(*self.cleaned_data.get('interests'))
+        return user
