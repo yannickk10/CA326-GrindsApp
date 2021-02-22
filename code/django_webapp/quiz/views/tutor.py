@@ -94,3 +94,23 @@ class QuizResultsView(DetailView):
 
     def get_queryset(self):
         return self.request.user.quizzes.all()
+
+def question_add(request, pk):
+    # By filtering the quiz by the url keyword argument `pk` and
+    # by the owner, which is the logged in user, we are protecting
+    # this view at the object-level. Meaning only the owner of
+    # quiz will be able to add questions to it.
+    quiz = get_object_or_404(Quiz, pk=pk, owner=request.user)
+
+    if request.method == 'POST':
+        form = QuestionForm(request.POST)
+        if form.is_valid():
+            question = form.save(commit=False)
+            question.quiz = quiz
+            question.save()
+            messages.success(request, 'You may now add answers/options to the question.')
+            return redirect('tutor:question_change', quiz.pk, question.pk)
+    else:
+        form = QuestionForm()
+
+    return render(request, 'quiz/tutors/question_add_form.html', {'quiz': quiz, 'form': form})
