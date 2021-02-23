@@ -31,7 +31,7 @@ class StudentSignUpForm(UserCreationForm):
 
     class Meta(UserCreationForm.Meta):
         model = User
-        fields = ['first_name', 'username', 'email', 'password1', 'password2']
+        fields = ['first_name', 'username', 'email', 'interests', 'password1', 'password2']
 
     @transaction.atomic
     def save(self):
