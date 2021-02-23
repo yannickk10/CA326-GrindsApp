@@ -17,7 +17,7 @@ def student_register(request):
             login(request, user)
             return redirect('students:quiz_list')
     else:
-        form = TutorSignUpForm()
+        form = StudentSignUpForm()
 
     context = {'form': form}
     return render(request, 'users/student_register.html', context)
