@@ -32,7 +32,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'dashboard.apps.DashboardConfig',
-    'contact.apps.ContactConfig',
     'home.apps.HomeConfig',
     'users.apps.UsersConfig',
     'quiz.apps.QuizConfig',
