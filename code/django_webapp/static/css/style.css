@@ -43,6 +43,7 @@ ul {
   flex-direction: column;
   padding: 0 50px;
   justify-content: center;
+  padding-bottom: 20px
 }
 
 .form-wrapper input {
