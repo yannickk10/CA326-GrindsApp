@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 from users import views as user_views
 from home import  views as home_views
-from contact import views as contact_view
 from dashboard import views as dashboard_view
 from quiz.views import tutor
 
@@ -30,7 +29,7 @@ urlpatterns = [
     path('login/', user_views.login_page, name="login"),
     path('student-register/', user_views.student_register, name="student-register"),
     path('tutor-register/', user_views.tutor_register, name="tutor-register"),
-    path('contact-page/', contact_view.contact_view, name="contact-page"),
+    path('contact-page/', home_views.contact_view, name="contact-page"),
     path('tutor-dashboard/', dashboard_view.tutor_dash_view, name="tutor-dash-page"),
     path('student-dashboard/', dashboard_view.student_dash_view, name="student-dash-page")
 ]
