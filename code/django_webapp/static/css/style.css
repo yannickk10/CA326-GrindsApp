@@ -5,7 +5,7 @@ body {
 	align-items: center;
 	flex-direction: column;
   font-family: 'Poppins', sans-serif;
-  height: 100vh;
+  height: 1050px;
   margin: -20px 0 50px;
 }
 
@@ -27,9 +27,9 @@ a {
   box-shadow: 0 7px 50px #bdbdbd, 0 0 0 20px #ffffffeb;
   position: relative;
   overflow: hidden;
-  width: 768px;
+  width: 80%;
   max-width: 100%;
-  min-height: 480px;
+  height: 150vh;
 }
 
 .form-wrapper form {
@@ -37,7 +37,6 @@ a {
   display: flex;
   flex-direction: column;
   padding: 0 50px;
-  height: 100%;
   justify-content: center;
 }
 
