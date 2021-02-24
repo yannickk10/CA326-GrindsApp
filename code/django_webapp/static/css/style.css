@@ -70,15 +70,21 @@ button {
   font-size: 17px;
   color: #fff;
   background-color: #009688;
+  transition: 1.5s;
+  transform: scale(0.95);
 }
 
-button:active {
+button:hover{
+  cursor: pointer;
+  transition: 1.5s;
   transform: scale(0.95);
   border-color: #000;
   box-shadow: 0 0 20px 0 #000;
   color: #fff;
   background-color: #000;
 }
+
+
 
 button:focus {
   outline: none
