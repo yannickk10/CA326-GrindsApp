@@ -15,7 +15,7 @@ class TutorSignUpForm(UserCreationForm):
 
     def save(self, commit=True):
         user = super().save(commit=False)
-        user.is_teacher = True
+        user.is_tutor = True
         if commit:
             user.save()
         return user
