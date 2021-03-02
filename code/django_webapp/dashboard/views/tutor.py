@@ -15,3 +15,15 @@ from quiz.models import User
 def home(request):
     context = {}
     return render(request, 'dashboard/tutors/home.html', context)
+
+class CourseCreateView(CreateView):
+    model = Course
+    fields = ('name', 'description', 'subject', )
+    template_name = 'dashboard/tutors/course_add.html'
+
+    def form_valid(self, form):
+        course = form.save(commit=False)
+        course.tutor = self.request.user
+        course.save()
+        messages.success(self.request, 'The course was created with success!')
+        return redirect('tutor:home')
