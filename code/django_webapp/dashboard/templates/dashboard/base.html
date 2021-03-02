@@ -5,33 +5,32 @@
   <head>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{% static '/css/style.css'%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     {% if title %}
       <title>TutorO - {{title}}</title>
     {% else %}
       <title>TutorO</title>
     {% endif %}
-
-    <nav>
-    	<input id="nav-toggle" type="checkbox">
-      <a href="{% url 'home' %}"><img src="../../static/images/TutorO_Logo.png" class="logo"></a>
-    	<ul class="links">
-    		<li><a href="#projects">Subjects</a></li>
-    		<li><a href="{% url 'home' %}">Contact</a></li>
-        <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a>
-    	</ul>
-    	<label for="nav-toggle" class="icon-burger">
-    		<div class="line"></div>
-    		<div class="line"></div>
-    		<div class="line"></div>
-    	</label>
-    </nav>
-
   </head>
   <body>
-    {% block content %}{% endblock %}
+    <div class="navbar-nav">
+      <p>Logged in as <strong>{{ user.first_name }}</strong>. <a class="nav-item nav-link" href="{% url 'logout' %}">Log out</a>.</p>
+    </div>
+    <div class="card mb-3">
+      <div class="card-body">
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          {% endfor %}
+        </div>
+      {% block content %}
+      {% endblock %}
+      </div>
+    </div>
 
   </body>
 </html>
