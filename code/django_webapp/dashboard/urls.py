@@ -5,13 +5,13 @@ urlpatterns = [
     path('', welcome.welcome_view, name='welcome'),
     path('contact/', welcome.contact_view, name='contact'),
 
-    path('students/', include(([
+    path('student-dashboard/', include(([
             path('home/', students.CourseListView.as_view(), name='course_home'),
             path('home/<int:pk>/', students.CourseDetailView.as_view(), name='course_detail'),
-        ], 'quiz'), namespace='students')),
+        ], 'quiz'), namespace='sudent-dashboard')),
 
-    path('tutor/', include(([
+    path('tutor-dashboard/', include(([
         path('home/', tutor.home, name='home'),
         path('course/add', tutor.CourseCreateView.as_view(), name='course_add'),
-    ], 'quiz'), namespace='tutor')),
+    ], 'quiz'), namespace='tutor-dashboard')),
 ]

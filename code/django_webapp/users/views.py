@@ -15,7 +15,7 @@ def student_register(request):
             usern = form.cleaned_data.get('first_name')
             messages.success(request, 'Account was created for ' + usern)
             login(request, user)
-            return redirect('students:course_home')
+            return redirect('student-dashboard:course_home')
     else:
         form = StudentSignUpForm()
 
@@ -30,7 +30,7 @@ def tutor_register(request):
             usern = form.cleaned_data.get('first_name')
             messages.success(request, 'Account was created for ' + usern)
             login(request, user)
-            return redirect('tutor:home')
+            return redirect('tutor-dashboard:home')
     else:
         form = TutorSignUpForm()
 
@@ -40,9 +40,9 @@ def tutor_register(request):
 def login_page(request):
     if request.user.is_authenticated:
         if request.user.is_tutor:
-            return redirect('tutor:home')
+            return redirect('tutor-dashboard:home')
         else:
-            return redirect('students:course_home')
+            return redirect('student-dashboard:course_home')
 
     else:
         if request.method == 'POST':
@@ -54,10 +54,10 @@ def login_page(request):
             if user is not None:
                 if request.user.is_tutor:
                     login(request, user)
-                    return redirect('tutor:home')
+                    return redirect('tutor-dashboard:home')
                 else:
                     login(request, user)
-                    return redirect('students:course_home')
+                    return redirect('student-dashboard:course_home')
             else:
                 messages.info(request, 'Username or Password is incorrect')
 
