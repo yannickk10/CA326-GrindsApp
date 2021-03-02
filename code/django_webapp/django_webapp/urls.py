@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from users import views as user_views
-from home import  views as home_views
 from dashboard import views as dashboard_view
 from quiz.views import tutor
 
