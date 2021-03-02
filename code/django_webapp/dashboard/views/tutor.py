@@ -26,4 +26,4 @@ class CourseCreateView(CreateView):
         course.tutor = self.request.user
         course.save()
         messages.success(self.request, 'The course was created with success!')
-        return redirect('tutor:home')
+        return redirect('tutor-dashboard:home')
