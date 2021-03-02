@@ -12,7 +12,7 @@ from ..models import Course
 
 class CourseListView(ListView):
     model = Course
-    template_name = 'quiz/students/home.html'
+    template_name = 'dashboard/students/home.html'
     context_object_name = 'courses'
 
 class CourseDetailView(DetailView):
