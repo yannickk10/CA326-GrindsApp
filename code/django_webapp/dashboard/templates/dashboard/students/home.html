@@ -1,0 +1,10 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+    {% for course in courses %}
+      <h2><a href="{% url 'students:course_detail' course.id %}">{{ course.name }}</a></h2>
+      {{ course.subject.get_html_badge }}
+      {{ course.tutor }}
+      <br></br>
+    {% endfor %}
+{% endblock %}
