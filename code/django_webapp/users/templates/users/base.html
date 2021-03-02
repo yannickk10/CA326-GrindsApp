@@ -12,22 +12,10 @@
     {% else %}
       <title>TutorO</title>
     {% endif %}
-
-    <nav>
-    	<input id="nav-toggle" type="checkbox">
-      <a href="{% url 'home' %}"><img src="../../static/images/TutorO_Logo.png" class="logo"></a>
-    	<ul class="links">
-    		<li><a href="{% url 'contact-page' %}">Contact</a></li>
-    	</ul>
-    	<label for="nav-toggle" class="icon-burger">
-    		<div class="line"></div>
-    		<div class="line"></div>
-    		<div class="line"></div>
-    	</label>
-    </nav>
   </head>
-  <body>
-    {% block content %}{% endblock %}
 
+  <body>
+    {% block content %}
+    {% endblock %}
   </body>
 </html>
