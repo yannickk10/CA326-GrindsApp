@@ -1,7 +1,9 @@
 from django.urls import include, path
-from .views import tutor, students
+from .views import welcome, tutor, students
 
 urlpatterns = [
+    path('', welcome.welcome_view, name='welcome'),
+    path('contact/', welcome.contact_view, name='contact'),
 
     path('students/', include(([
             path('home/', students.CourseListView.as_view(), name='course_home'),
