@@ -7,7 +7,7 @@ class Course(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
-    student = models.ManyToManyField('Student', blank=True)
+    student = models.ManyToManyField('quiz.Student', blank=True)
     tutor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='courses')
 
     def __str__(self):
