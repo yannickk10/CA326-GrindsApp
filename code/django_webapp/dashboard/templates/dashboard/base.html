@@ -16,7 +16,7 @@
   </head>
   <body>
     <div class="navbar">
-    	<img src="../../static/images/TutorO_Logo.png" class="home-logo">
+    	<a href="{% url 'studentdash:course_home' %}"><img src="../../static/images/TutorO_Logo.png" class="home-logo"></a>
     	<ul class="links">
     		<li><a href="#work">Work</a></li>
     		<li><a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> {{user.username}}</a></li>
@@ -27,7 +27,7 @@
     		<div class="line"></div>
     	</label>
     </div>
-    
+
     <div class="card mb-3">
       <div class="card-body">
         {% for message in messages %}
