@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
 
 # Create your views here.
 from .forms import TutorSignUpForm, StudentSignUpForm
+from quiz.models import User
 from django.contrib import messages
 
 def student_register(request):
@@ -15,7 +16,7 @@ def student_register(request):
             usern = form.cleaned_data.get('first_name')
             messages.success(request, 'Account was created for ' + usern)
             login(request, user)
-            return redirect('student-dashboard:course_home')
+            return redirect('studentdash:course_home')
     else:
         form = StudentSignUpForm()
 
@@ -30,7 +31,7 @@ def tutor_register(request):
             usern = form.cleaned_data.get('first_name')
             messages.success(request, 'Account was created for ' + usern)
             login(request, user)
-            return redirect('tutor-dashboard:home')
+            return redirect('tutordash:home')
     else:
         form = TutorSignUpForm()
 
@@ -39,10 +40,12 @@ def tutor_register(request):
 
 def login_page(request):
     if request.user.is_authenticated:
-        if request.user.is_tutor:
-            return redirect('tutor-dashboard:home')
+        if user.is_student == True:
+            login(request, user)
+            return redirect('studentdash:course_home')
         else:
-            return redirect('student-dashboard:course_home')
+            login(request, user)
+            return redirect('tutordash:home')
 
     else:
         if request.method == 'POST':
@@ -52,12 +55,12 @@ def login_page(request):
             user = authenticate(request, username=username, password=password)
 
             if user is not None:
-                if request.user.is_tutor:
+                if user.is_student == True:
                     login(request, user)
-                    return redirect('tutor-dashboard:home')
+                    return redirect('studentdash:course_home')
                 else:
                     login(request, user)
-                    return redirect('student-dashboard:course_home')
+                    return redirect('tutordash:home')
             else:
                 messages.info(request, 'Username or Password is incorrect')
 
