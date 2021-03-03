@@ -1,14 +1,15 @@
 {% extends 'dashboard/base.html' %}
 
 {% block content %}
-  <div class="card" style="border: none; width: auto;">
-  <div class="card-body">
-    <h5 class="card-title">{{ object.name }}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{ object.subject.get_html_badge }}</h6>
-    <p class="card-text">{{object.description}}</p>
-    <a href="#" class="card-link">Enroll Now!</a>
-    <a href="#" class="card-link">Go back</a>
-  </div>
-</div>
-
+    <h1>Grinds Courses</h1>
+      <div class="card" style="font-family: 'Poppins', sans-serif; margin: 0 30px 0 30px; border-radius: 20px; box-shadow: 5px 5px 15px LightGrey; text-align: center;">
+      <div class="card-body">
+        <h5 class="card-title">{{ object.name }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ object.subject.get_html_badge }}</h6>
+        <p class="card-text">{{object.description}}</p>
+        <button><a href="#" class="card-link">Enroll Now!</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button><a href="#" class="card-link">Go back</a></button>
+      </div>
+    </div>
+    <br><br>
 {% endblock %}
