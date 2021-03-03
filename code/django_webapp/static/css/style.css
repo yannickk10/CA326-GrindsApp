@@ -47,7 +47,7 @@ a {
 	height: 100px;
 	background-color: #009688;
 }
-nav .logo {
+.navbar .home-logo {
 	float: left;
 	width: 40%;
 	height: 100%;
