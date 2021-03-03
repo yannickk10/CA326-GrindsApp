@@ -107,11 +107,6 @@ a {
 	transition: all .3s ease-in-out;
 }
 @media screen and (max-width: 768px) {
-	.navbar .home-logo {
-		float: none;
-		width: auto;
-		justify-content: center;
-	}
 	.navbar .links {
 		float: none;
 		position: fixed;
@@ -147,13 +142,6 @@ a {
 	.navbar :checked ~ .icon-burger .line:nth-child(2) {
 		opacity: 0;
 	}
-}
-
-.navbar .home-logo{
-  width: auto;
-  cursor: pointer;
-  height: 35px;
-  padding: 35px 0 50px 0;
 }
 
 .wrapper {
