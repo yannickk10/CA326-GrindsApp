@@ -57,6 +57,7 @@ a {
 }
 
 .form-wrapper input {
+  font-size: 14px;
   background-color: #eee;
   display: flex;
   flex-direction: column;

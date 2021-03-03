@@ -18,12 +18,15 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from users import views as user_views
 from quiz.views import tutor, students
-from dashboard.views import welcome, tutor, students
+from dashboard.views import welcome as welcome_views
+from dashboard.views import tutor_dashboard, student_dashboard
 
 
 urlpatterns = [
     path('', include('quiz.urls')),
     path('', include('dashboard.urls')),
+    path('', welcome_views.welcome_view, name='welcome'),
+    path('contact/', welcome_views.contact_view, name='contact'),
     path('admin/', admin.site.urls),
     path('login/', user_views.login_page, name="login"),
     path('student-register/', user_views.student_register, name="student-register"),
