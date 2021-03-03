@@ -1,8 +1,14 @@
 {% extends 'dashboard/base.html' %}
 
 {% block content %}
-  <h2>{{ object.name }}</h2>
-  {{ object.subject.get_html_badge }}
-  {{ object.tutor }}
-  <p>{{object.description}}</p>
+  <div class="card" style="width: auto;">
+  <div class="card-body">
+    <h5 class="card-title">{{ object.name }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ object.subject.get_html_badge }}</h6>
+    <p class="card-text">{{object.description}}</p>
+    <a href="#" class="card-link">Enroll Now!</a>
+    <a href="#" class="card-link">Go back</a>
+  </div>
+</div>
+
 {% endblock %}
