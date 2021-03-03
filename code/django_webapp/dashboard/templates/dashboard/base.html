@@ -14,9 +14,22 @@
     {% endif %}
   </head>
   <body>
-    <div class="navbar-nav">
-      <p>Logged in as <strong>{{ user.first_name }}</strong>. <a class="nav-item nav-link" href="{% url 'logout' %}">Log out</a>.</p>
-    </div>
+    <nav>
+    	<input id="nav-toggle" type="checkbox">
+    	<img src="../../static/images/TutorO_Logo.png" class="logo">
+    	<ul class="links">
+    		<li><a href="#home"><i class="fa fa-home fa-fw" aria-hidden="true"></i>Home</a></li>
+    		<li><a href="#work">Work</a></li>
+    		<li><a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> {{user.first_name}}</a></li>.
+    	</ul>
+    	<label for="nav-toggle" class="icon-burger">
+    		<div class="line"></div>
+    		<div class="line"></div>
+    		<div class="line"></div>
+    	</label>
+    </nav>
+    <br><br><br><br><br>
+
     <div class="card mb-3">
       <div class="card-body">
         {% for message in messages %}
