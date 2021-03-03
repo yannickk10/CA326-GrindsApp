@@ -224,6 +224,10 @@ button:focus {
   height: 100%;
 }
 
+.form-wrapper a{
+  color: gray;
+}
+
 .sign-up-wrapper {
   left: 0;
   width: 50%;
