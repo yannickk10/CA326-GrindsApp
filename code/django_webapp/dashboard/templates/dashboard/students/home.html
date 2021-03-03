@@ -2,9 +2,13 @@
 
 {% block content %}
     {% for course in courses %}
-      <h2><a href="{% url 'studentdash:course_detail' course.id %}">{{ course.name }}</a></h2>
-      {{ course.subject.get_html_badge }}
-      {{ course.tutor }}
+      <div class="card" style="border: none; width: auto;">
+        <div class="card-body">
+          <h5 class="card-title">{{ course.subject.get_html_badge }}</a></h5>
+          <h6 class="card-subtitle mb-2 text-muted">taught by:  {{ course.tutor }} </h6>
+          <a href="{% url 'studentdash:course_detail' course.id %}">{{ course.name }}</a>
+        </div>
+      </div>
       <br></br>
     {% endfor %}
 {% endblock %}
