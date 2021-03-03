@@ -8,7 +8,7 @@ urlpatterns = [
     path('student-dashboard/', include(([
             path('home/', students.CourseListView.as_view(), name='course_home'),
             path('home/<int:pk>/', students.CourseDetailView.as_view(), name='course_detail'),
-        ], 'quiz'), namespace='sudent-dashboard')),
+        ], 'quiz'), namespace='student-dashboard')),
 
     path('tutor-dashboard/', include(([
         path('home/', tutor.home, name='home'),
