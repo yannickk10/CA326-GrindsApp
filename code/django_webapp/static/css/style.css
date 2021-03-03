@@ -59,13 +59,17 @@ a {
 }
 .navbar .home-logo {
 	float: left;
-	width: 40%;
-	height: 100%;
+	width: auto;
+	height: 35px;
 	display: flex;
 	align-items: center;
 	font-size: 24px;
-	color: #fff;
 }
+
+.navbar .home-logo:hover{
+  cursor: pointer;
+}
+
 .navbar .links {
 	float: right;
 	padding: 0;
