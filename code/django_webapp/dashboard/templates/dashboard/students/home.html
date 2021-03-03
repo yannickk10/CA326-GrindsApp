@@ -2,11 +2,12 @@
 
 {% block content %}
     {% for course in courses %}
-      <div class="card" style="border: none; width: auto;">
+      <div class="card" style="font-family: 'Poppins', sans-serif; margin: 0 30px 0 30px; border-radius: 20px; box-shadow: 5px 5px 15px LightGrey; width: 100vh; text-align: center;">
         <div class="card-body">
-          <h5 class="card-title">{{ course.subject.get_html_badge }}</a></h5>
-          <h6 class="card-subtitle mb-2 text-muted">taught by:  {{ course.tutor }} </h6>
-          <a href="{% url 'studentdash:course_detail' course.id %}">{{ course.name }}</a>
+          <h5 class="card-title">{{course.name}}</a></h5>
+          <p class="card-text">{{ course.subject.get_html_badge }}</p>
+          <h6 class="card-subtitle mb-2 text-muted">Taught by: &nbsp;&nbsp;<strong>{{ course.tutor }}</strong></h6>
+          <a href="{% url 'studentdash:course_detail' course.id %}">Go there!</a>
         </div>
       </div>
       <br></br>
