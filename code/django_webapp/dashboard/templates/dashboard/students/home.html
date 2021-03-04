@@ -7,7 +7,7 @@
         <div class="card-body">
           <h5 class="card-title">{{course.name}}</a></h5>
           <p class="card-text">{{ course.subject.get_html_badge }}</p>
-          <h6 class="card-subtitle mb-2 text-muted">Taught by: &nbsp;&nbsp;<strong>{{ course.tutor }}</strong></h6>
+          <h6 class="card-subtitle mb-2 text-muted">Taught by: &nbsp;&nbsp;<strong>{{ course.tutor.name }}</strong></h6>
           <button><a href="{% url 'studentdash:course_detail' course.id %}">Go there!</a></button>
         </div>
       </div>
