@@ -7,7 +7,10 @@
         <h5 class="card-title">{{ object.name }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">{{ object.subject.get_html_badge }}</h6>
         <p class="card-text">{{object.description}}</p>
-        <button class="btn btn-success" style="margin: 0 15px 0 15px; border-color: #009688; background-color: #009688;"><a href="#" class="card-link">Enroll Now!</a></button>
+        <form method="POST">
+          {%csrf_token%}
+          <button class="btn btn-success" style="margin: 0 15px 0 15px; border-color: #009688; background-color: #009688;"><a href="#" class="card-link">Enroll Now!</a></button>
+        </form>
         <button class="btn btn-success" style="margin: 0 15px 0 15px; border-color: #009688; background-color: #009688;"><a href="{% url 'studentdash:course_home' %}" class="card-link">Go back</a></button>
       </div>
     </div>
