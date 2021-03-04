@@ -1,8 +1,18 @@
 {% extends 'dashboard/base.html' %}
 
 {% block content %}
-  <h2>{{ object.name }}</h2>
-  {{ object.subject.get_html_badge }}
-  {{ object.tutor }}
-  <p>{{object.description}}</p>
+    <h1>Grinds Courses</h1>
+      <div class="card" style="font-family: 'Poppins', sans-serif; margin: 0 30px 0 30px; border-radius: 20px; box-shadow: 5px 5px 15px LightGrey; text-align: center;">
+      <div class="card-body">
+        <h5 class="card-title">{{ object.name }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ object.subject.get_html_badge }}</h6>
+        <p class="card-text">{{object.description}}</p>
+        <form method="POST">
+          {%csrf_token%}
+          <button class="btn btn-success" style="margin: 0 15px 0 15px; border-color: #009688; background-color: #009688;"><a href="#" class="card-link">Enroll Now!</a></button>
+        </form>
+        <button class="btn btn-success" style="margin: 0 15px 0 15px; border-color: #009688; background-color: #009688;"><a href="{% url 'studentdash:course_home' %}" class="card-link">Go back</a></button>
+      </div>
+    </div>
+    <br><br>
 {% endblock %}

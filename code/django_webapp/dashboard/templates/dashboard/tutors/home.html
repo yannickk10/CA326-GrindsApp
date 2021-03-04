@@ -1,6 +1,17 @@
 {% extends 'dashboard/base.html' %}
 
 {% block content %}
-  <h1>Home</h1>
-  <button class="btn btn-success"><a href="{% url 'tutor-dashboard:course_add' %}">Add Course</button>
+  <h1>Courses</h1>
+  <a href="{% url 'tutordash:course_add' %}" class="btn btn-primary mb-3" role="button">Add course</a>
+  {% for course in courses.all %}
+
+  <h2>{{ course.name }}</h2>
+  {{ course.subject.get_html_badge }}
+  <p>{{object.description}}</p>
+  <br>
+  <br>
+  <br>
+  {% empty %}
+  <h3 class="bg-light text-center font-italic" colspan="5">You haven't created any grind courses yet.</h3>
+  {% endfor %}
 {% endblock %}

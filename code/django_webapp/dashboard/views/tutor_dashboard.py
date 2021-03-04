@@ -12,10 +12,6 @@ from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
 from ..models import Course
 from quiz.models import User
 
-def home(request):
-    context = {}
-    return render(request, 'dashboard/tutors/home.html', context)
-
 class CourseCreateView(CreateView):
     model = Course
     fields = ('name', 'description', 'subject', )
@@ -26,4 +22,13 @@ class CourseCreateView(CreateView):
         course.tutor = self.request.user
         course.save()
         messages.success(self.request, 'The course was created with success!')
-        return redirect('tutor-dashboard:home')
+        return redirect('tutordash:home')
+
+class CourseListView(ListView):
+    model = Course
+    context_object_name = 'courses'
+    template_name = 'dashboard/tutors/home.html'
+
+    def get_queryset(self):
+        queryset = self.request.user.courses
+        return queryset
