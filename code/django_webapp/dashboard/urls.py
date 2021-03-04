@@ -9,7 +9,7 @@ urlpatterns = [
         ], 'dashboard'), namespace='studentdash')),
 
     path('tutordash/', include(([
-        path('home/', tutor_dashboard.CourseCreateView.as_view(), name='home'),
+        path('home/', tutor_dashboard.CourseListView.as_view(), name='home'),
         path('course/add', tutor_dashboard.CourseCreateView.as_view(), name='course_add'),
     ], 'dashboard'), namespace='tutordash')),
 ]
