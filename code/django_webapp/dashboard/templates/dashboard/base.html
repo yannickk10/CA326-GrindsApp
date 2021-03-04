@@ -27,7 +27,7 @@
     		<div class="line"></div>
     	</label>
     </div>
-
+<div class="content-wrapper" style="margin-top:100px">
     <div class="card mb-3">
       <div class="card-body">
         {% for message in messages %}
@@ -39,7 +39,6 @@
           {% endfor %}
         </div>
       <br>
-      <div class="content-wrapper">
       {% block content %}
       {% endblock %}
       </div>
