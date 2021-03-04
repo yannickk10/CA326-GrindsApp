@@ -12,10 +12,6 @@ from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
 from ..models import Course
 from quiz.models import User
 
-def home(request):
-    context = {}
-    return render(request, 'dashboard/tutors/home.html', context)
-
 class CourseCreateView(CreateView):
     model = Course
     fields = ('name', 'description', 'subject', )
