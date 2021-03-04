@@ -27,3 +27,12 @@ class CourseCreateView(CreateView):
         course.save()
         messages.success(self.request, 'The course was created with success!')
         return redirect('tutordash:home')
+
+class CourseListView(ListView):
+    model = Course
+    context_object_name = 'courses'
+    template_name = 'dashboard/tutors/home.html'
+
+    def get_queryset(self):
+        queryset = self.request.user.courses
+        return queryset
