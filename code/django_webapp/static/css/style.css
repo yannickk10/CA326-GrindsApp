@@ -182,15 +182,15 @@ a {
 
 button {
   border: 3px #009688;
-  border-radius: 20px;
+  border-radius: 5px;
   margin: 8px 0;
   outline: none;
-  padding: 12px;
+  padding: 5px 12px 5px 12px;
   box-sizing: border-box;
   border-color: #009688;
-  box-shadow: 0 0 20px 0 #009688;
+  box-shadow: 5px 5px 15px 0 #009688;
   font-family: 'Poppins', sans-serif;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 17px;
   color: #fff;
   background-color: #009688;
