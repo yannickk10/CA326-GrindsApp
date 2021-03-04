@@ -2,7 +2,7 @@
 
 {% block content %}
   <h1>Courses</h1>
-  <a href="{% url 'tutor:course_add' %}" class="btn btn-primary mb-3" role="button">Add course</a>
+  <a href="{% url 'tutordash:course_add' %}" class="btn btn-primary mb-3" role="button">Add course</a>
   {% for course in courses.all %}
 
   <h2>{{ course.name }}</h2>
