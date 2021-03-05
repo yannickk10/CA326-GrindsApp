@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load quiz %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -15,6 +16,8 @@
     {% endif %}
   </head>
   <body>
+    {% user.is_student as user_state %}
+    {% if user_state == true}
     <div class="navbar">
     	<a href="{% url 'studentdash:course_home' %}"><img src="../../../static/images/TutorO_Logo.png" class="home-logo"></a>
       <ul class="links">
@@ -27,6 +30,20 @@
     		<div class="line"></div>
     	</label>
     </div>
+    {% else %}
+    <div class="navbar">
+    	<a href="{% url 'studentdash:course_detail' %}"><img src="../../../static/images/TutorO_Logo.png" class="home-logo"></a>
+      <ul class="links">
+    		<li><a href="#work">Work</a></li>
+    		<li><a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> {{user.username}}</a></li>
+    	</ul>
+    	<label for="nav-toggle" class="icon-burger">
+    		<div class="line"></div>
+    		<div class="line"></div>
+    		<div class="line"></div>
+    	</label>
+    </div>
+    {% endif %}
 <div class="content-wrapper" style="margin-top:100px">
     <div class="card mb-3">
       <div class="card-body">
