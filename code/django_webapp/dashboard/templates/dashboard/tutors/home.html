@@ -6,13 +6,14 @@
   <a  class="btn btn-success" style="width:150px; border-color: #009688; background-color: #009688;" href="{% url 'tutordash:course_add' %}" class="btn btn-primary mb-3" role="button">Add course</a>
 </div>
   {% for course in courses.all %}
-
-  <h2>{{ course.name }center>
-  {{ course.subject.get_html_badge }}
-  <p>{{object.description}}</p>
-  <br>
-  <br>
-  <br>
+  <div class="card" style="font-family: 'Poppins', sans-serif; margin: 0 30px 0 30px; padding-left:30px; border-radius: 15px; box-shadow: 5px 5px 15px LightGrey;">
+    <div class="card-body">
+      <h5 class="card-title">{{course.name}}</a></h5>
+      <p class="card-text">{{ course.subject.get_html_badge }}</p>
+      <p class="card-text">{{course.description}}</p>
+    </div>
+  </div>
+  <br><br>
   {% empty %}
   <h3 class="bg-light text-center font-italic" colspan="5" style="margin: 15px 0 0 0; font-size:20px;">You haven't created any grind courses yet.</h3>
   {% endfor %}
