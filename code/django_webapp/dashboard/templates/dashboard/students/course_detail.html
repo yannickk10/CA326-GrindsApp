@@ -5,6 +5,7 @@
       <div class="card" style="font-family: 'Poppins', sans-serif; margin: 0 30px 0 30px; border-radius: 20px; box-shadow: 5px 5px 15px LightGrey; text-align: center;">
       <div class="card-body">
         <h5 class="card-title">{{ object.name }}</h5>
+        <p class="card-text" style="color: gray;"><label>Tutor:</label> &nbsp;&nbsp;<strong>{{object.tutor}}</strong></p>
         <h6 class="card-subtitle mb-2 text-muted">{{ object.subject.get_html_badge }}</h6>
         <p class="card-text">{{object.description}}</p>
         <form method="POST">
