@@ -2,10 +2,12 @@
 
 {% block content %}
   <h1>Courses</h1>
-  <a  class="btn btn-success" style="margin: 0 600px 0 600px; border-color: #009688; background-color: #009688;" href="{% url 'tutordash:course_add' %}" class="btn btn-primary mb-3" role="button">Add course</a>
+<div style="text-align: center;">
+  <a  class="btn btn-success" style="width:150px; border-color: #009688; background-color: #009688;" href="{% url 'tutordash:course_add' %}" class="btn btn-primary mb-3" role="button">Add course</a>
+</div>
   {% for course in courses.all %}
 
-  <h2>{{ course.name }}</h2>
+  <h2>{{ course.name }center>
   {{ course.subject.get_html_badge }}
   <p>{{object.description}}</p>
   <br>
