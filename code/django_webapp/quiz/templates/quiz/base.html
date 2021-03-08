@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="{% static '/css/style.css'%}">
     {% if title %}
       <title>TutorO - {{title}}</title>
     {% else %}
@@ -14,6 +14,40 @@
     {% endif %}
   </head>
   <body>
+    {% if user.is_student == True %}
+      <div class="navbar">
+      	<a href="{% url 'studentdash:course_home' %}"><img src="../../../static/images/TutorO_Logo.png" class="home-logo"></a>
+        <ul class="links">
+          <li><a href="{% url 'studentdash:course_home' %}">Courses</a></li>
+      		<li><a href="{% url 'students:quiz_list' %}">Quizzes</a></li>
+          <li><a href="" style="cursor: default; padding: 0; margin: 0 0 0 20px; text-align:center; "><small>Logged in as {{user.first_name}}</small></a></li>
+          <li><a href="" style="cursor: default; margin:0; padding: 0;"><small>|</small></a></li>
+      		<li><a href="{% url 'logout' %}" style="padding: 0; margin: 0;"><small>logout</small></a></li>
+      	</ul>
+      	<label for="nav-toggle" class="icon-burger">
+      		<div class="line"></div>
+      		<div class="line"></div>
+      		<div class="line"></div>
+      	</label>
+      </div>
+    {% else %}
+      <div class="navbar">
+      	<a href="{% url 'tutordash:home' %}"><img src="../../../static/images/TutorO_Logo.png" class="home-logo"></a>
+        <ul class="links">
+          <li><a href="{% url 'tutordash:home' %}">Courses</a></li>
+      		<li><a href="{% url 'tutor:quiz_change_list' %}">Quizzes</a></li>
+          <li><a href="" style="cursor: default; padding: 0; margin: 0 0 0 20px; text-align:center; "><small>Logged in as {{user.first_name}}</small></a></li>
+          <li><a href="" style="cursor: default; margin:0; padding: 0;"><small>|</small></a></li>
+      		<li><a href="{% url 'logout' %}" style="padding: 0; margin: 0;"><small>logout</small></a></li>
+      	</ul>
+      	<label for="nav-toggle" class="icon-burger">
+      		<div class="line"></div>
+      		<div class="line"></div>
+      		<div class="line"></div>
+      	</label>
+      </div>
+    {% endif %}
+  <div class="content-wrapper" style="margin-top:100px">
     <div class="card mb-3">
       <div class="card-body">
         {% for message in messages %}
@@ -28,6 +62,6 @@
       {% endblock %}
       </div>
     </div>
-
+</div>
   </body>
 </html>
