@@ -10,10 +10,11 @@ from django.utils.decorators import method_decorator
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
 
+from ..decorators import tutor_required
 from ..forms import BaseAnswerInlineFormSet, QuestionForm
 from ..models import Answer, Question, Quiz, User
 
-
+@method_decorator([login_required, tutor_required], name='dispatch')
 class QuizListView(ListView):
     model = Quiz
     ordering = ('name', )
@@ -27,6 +28,7 @@ class QuizListView(ListView):
             .annotate(taken_count=Count('taken_quizzes', distinct=True))
         return queryset
 
+@method_decorator([login_required, tutor_required], name='dispatch')
 class QuizCreateView(CreateView):
     model = Quiz
     fields = ('name', 'subject', )
@@ -39,6 +41,7 @@ class QuizCreateView(CreateView):
         messages.success(self.request, 'The quiz was created with success! Go ahead and add some questions now.')
         return redirect('tutor:quiz_change', quiz.pk)
 
+@method_decorator([login_required, tutor_required], name='dispatch')
 class QuizUpdateView(UpdateView):
     model = Quiz
     fields = ('name', 'subject', )
@@ -60,6 +63,7 @@ class QuizUpdateView(UpdateView):
     def get_success_url(self):
             return reverse('tutor:quiz_change', kwargs={'pk': self.object.pk})
 
+@method_decorator([login_required, tutor_required], name='dispatch')
 class QuizDeleteView(DeleteView):
     model = Quiz
     context_object_name = 'quiz'
@@ -74,6 +78,7 @@ class QuizDeleteView(DeleteView):
     def get_queryset(self):
         return self.request.user.quizzes.all()
 
+@method_decorator([login_required, tutor_required], name='dispatch')
 class QuizResultsView(DetailView):
     model = Quiz
     context_object_name = 'quiz'
@@ -95,6 +100,8 @@ class QuizResultsView(DetailView):
     def get_queryset(self):
         return self.request.user.quizzes.all()
 
+@login_required
+@tutor_required
 def question_add(request, pk):
     # By filtering the quiz by the url keyword argument `pk` and
     # by the owner, which is the logged in user, we are protecting
@@ -115,6 +122,8 @@ def question_add(request, pk):
 
     return render(request, 'quiz/tutors/question_add_form.html', {'quiz': quiz, 'form': form})
 
+@login_required
+@tutor_required
 def question_change(request, quiz_pk, question_pk):
     # Simlar to the `question_add` view, this view is also managing
     # the permissions at object-level. By querying both `quiz` and
@@ -156,6 +165,7 @@ def question_change(request, quiz_pk, question_pk):
         'formset': formset
     })
 
+@method_decorator([login_required, tutor_required], name='dispatch')
 class QuestionDeleteView(DeleteView):
     model = Question
     context_object_name = 'question'

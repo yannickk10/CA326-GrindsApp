@@ -11,7 +11,9 @@ from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
 from ..models import Course
 from quiz.models import User
+from quiz.decorators import tutor_required
 
+@method_decorator([login_required, tutor_required], name='dispatch')
 class CourseCreateView(CreateView):
     model = Course
     fields = ('name', 'description', 'subject', )
@@ -24,6 +26,7 @@ class CourseCreateView(CreateView):
         messages.success(self.request, 'The course was created with success!')
         return redirect('tutordash:home')
 
+@method_decorator([login_required, tutor_required], name='dispatch')
 class CourseListView(ListView):
     model = Course
     context_object_name = 'courses'
