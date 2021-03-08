@@ -109,6 +109,11 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+	.navbar .home-logo {
+		float: none;
+		width: auto;
+		justify-content: center;
+	}
 	.navbar .links {
 		float: none;
 		position: fixed;
@@ -144,7 +149,9 @@ a {
 	.navbar :checked ~ .icon-burger .line:nth-child(2) {
 		opacity: 0;
 	}
+
 }
+
 
 .wrapper {
   background: #fff;
