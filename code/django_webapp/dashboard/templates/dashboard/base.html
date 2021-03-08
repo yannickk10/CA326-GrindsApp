@@ -27,9 +27,8 @@
               <li><a href="" style="cursor: default; padding: 0; margin: 0 0 0 0; text-align:center; "><small>Logged in as {{user.first_name}}</small></a></li>
               <li><a href="" style="cursor: default; margin:0 5px 0 0; padding: 0;"><small>|</small></a></li>
           		<li><a href="{% url 'logout' %}" style="padding: 0; margin: 0 0 0 0; text-align: center"><small>logout</small><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-          </ul>
+            </ul>
           </li>
-
         </ul>
       	<label for="nav-toggle" class="icon-burger">
       		<div class="line"></div>
@@ -44,9 +43,13 @@
         <ul class="links">
           <li><a href="{% url 'tutordash:home' %}">Courses</a></li>
       		<li><a href="{% url 'tutor:quiz_change_list' %}">Quizzes</a></li>
-          <li><a href="" style="cursor: default; padding: 0; margin: 0 0 0 20px; text-align:center; "><small>Logged in as {{user.first_name}}</small></a></li>
-          <li><a href="" style="cursor: default; margin:0; padding: 0;"><small>|</small></a></li>
-      		<li><a href="{% url 'logout' %}" style="padding: 0; margin: 0;"><small>logout</small></a></li>
+          <li>
+            <ul style="padding: 0 10px 0 30px; float: right">
+              <li><a href="" style="cursor: default; padding: 0; margin: 0 0 0 0; text-align:center; "><small>Logged in as {{user.first_name}}</small></a></li>
+              <li><a href="" style="cursor: default; margin:0 5px 0 0; padding: 0;"><small>|</small></a></li>
+          		<li><a href="{% url 'logout' %}" style="padding: 0; margin: 0 0 0 0; text-align: center"><small>logout</small><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+            </ul>
+          </li>
       	</ul>
       	<label for="nav-toggle" class="icon-burger">
       		<div class="line"></div>
