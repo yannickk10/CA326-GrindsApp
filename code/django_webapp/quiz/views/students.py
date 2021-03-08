@@ -9,10 +9,11 @@ from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, ListView, UpdateView
 
 from ..forms import TakeQuizForm
+from ..decorators import student_required
 from ..models import Quiz, Student, TakenQuiz, User
 
 
-
+@method_decorator([login_required, student_required], name='dispatch')
 class QuizListView(ListView):
     model = Quiz
     ordering = ('name', )
@@ -29,6 +30,8 @@ class QuizListView(ListView):
             .filter(questions_count__gt=0)
         return queryset
 
+@login_required
+@student_required
 def take_quiz(request, pk):
     quiz = get_object_or_404(Quiz, pk=pk)
     student = request.user.student
@@ -70,6 +73,7 @@ def take_quiz(request, pk):
         'progress': progress
     })
 
+@method_decorator([login_required, student_required], name='dispatch')
 class TakenQuizListView(ListView):
     model = TakenQuiz
     context_object_name = 'taken_quizzes'

@@ -6,6 +6,7 @@ urlpatterns = [
     path('studentdash/', include(([
             path('home/', student_dashboard.CourseListView.as_view(), name='course_home'),
             path('home/<int:pk>/', student_dashboard.CourseDetailView.as_view(), name='course_detail'),
+            path('course/<int:courseid>/', student_dashboard.course_show, name='course_enroll'),
         ], 'dashboard'), namespace='studentdash')),
 
     path('tutordash/', include(([

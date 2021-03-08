@@ -11,29 +11,29 @@ from django.views.generic import (CreateView, ListView, UpdateView, DetailView)
 
 from ..models import Course
 from dashboard.forms import EnrollForm
+from quiz.decorators import student_required
 
 
+@method_decorator([login_required, student_required], name='dispatch')
 class CourseListView(ListView):
     model = Course
     template_name = 'dashboard/students/home.html'
     context_object_name = 'courses'
 
-class CourseDetailView(FormMixin, DetailView):
+@method_decorator([login_required, student_required], name='dispatch')
+class CourseDetailView(DetailView):
     model = Course
     template_name = 'dashboard/students/course_detail.html'
-    form_class = EnrollForm
 
-    def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
-        if form.is_valid():
-            return self.form_valid(form)
-
-        return render(request, self.template_name, {'form': form})
-
-    def form_valid(self, form):
-        course = form.save(commit=False)
-        user = self.request.user
+@login_required
+@student_required
+def course_show(request, courseid):
+    user = request.user
+    course = Course.objects.get(pk=courseid)
+    if course.student.filter(username=user).exists() == True:
+        messages.info(request, 'You are already part of this course')
+        return redirect('studentdash:course_home')
+    else:
         course.student.add(user)
-        course.save()
-        messages.success(self.request, 'You have been added to the course')
-        return redirect('students:course_home')
+        messages.success(request, 'You have been added to the course')
+        return redirect('studentdash:course_home')
