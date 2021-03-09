@@ -17,14 +17,19 @@
   <body>
     {% if user.is_student == True %}
       <div class="navbar">
+        <input id="nav-toggle" type="checkbox">
       	<a href="{% url 'studentdash:course_home' %}"><img src="../../../static/images/TutorO_Logo.png" class="home-logo"></a>
         <ul class="links">
           <li><a href="{% url 'studentdash:course_home' %}">Courses</a></li>
       		<li><a href="{% url 'students:quiz_list' %}">Quizzes</a></li>
-          <li><a href="" style="cursor: default; padding: 0; margin: 0 0 0 20px; text-align:center; "><small>Logged in as {{user.first_name}}</small></a></li>
-          <li><a href="" style="cursor: default; margin:0; padding: 0;"><small>|</small></a></li>
-      		<li><a href="{% url 'logout' %}" style="padding: 0; margin: 0;"><small>logout</small></a></li>
-      	</ul>
+          <li>
+            <ul style="padding: 0 10px 0 30px; float: right">
+              <li><a href="" style="cursor: default; padding: 0; margin: 0 0 0 0; text-align:center; "><small>Logged in as {{user.first_name}}</small></a></li>
+              <li><a href="" style="cursor: default; margin:0 5px 0 0; padding: 0;"><small>|</small></a></li>
+          		<li><a href="{% url 'logout' %}" style="padding: 0; margin: 0 0 0 0; text-align: center"><small>logout</small><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+            </ul>
+          </li>
+        </ul>
       	<label for="nav-toggle" class="icon-burger">
       		<div class="line"></div>
       		<div class="line"></div>
@@ -33,13 +38,18 @@
       </div>
     {% else %}
       <div class="navbar">
+        <input id="nav-toggle" type="checkbox">
       	<a href="{% url 'tutordash:home' %}"><img src="../../../static/images/TutorO_Logo.png" class="home-logo"></a>
         <ul class="links">
           <li><a href="{% url 'tutordash:home' %}">Courses</a></li>
       		<li><a href="{% url 'tutor:quiz_change_list' %}">Quizzes</a></li>
-          <li><a href="" style="cursor: default; padding: 0; margin: 0 0 0 20px; text-align:center; "><small>Logged in as {{user.first_name}}</small></a></li>
-          <li><a href="" style="cursor: default; margin:0; padding: 0;"><small>|</small></a></li>
-      		<li><a href="{% url 'logout' %}" style="padding: 0; margin: 0;"><small>logout</small></a></li>
+          <li>
+            <ul style="padding: 0 10px 0 30px; float: right">
+              <li><a href="" style="cursor: default; padding: 0; margin: 0 0 0 0; text-align:center; "><small>Logged in as {{user.first_name}}</small></a></li>
+              <li><a href="" style="cursor: default; margin:0 5px 0 0; padding: 0;"><small>|</small></a></li>
+          		<li><a href="{% url 'logout' %}" style="padding: 0; margin: 0 0 0 0; text-align: center"><small>logout</small><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+            </ul>
+          </li>
       	</ul>
       	<label for="nav-toggle" class="icon-burger">
       		<div class="line"></div>
@@ -49,7 +59,7 @@
       </div>
     {% endif %}
 <div class="content-wrapper" style="margin-top:100px">
-    <div class="card mb-3">
+    <div class="card mb-3" style="margin-top:50px">
       <div class="card-body">
         {% for message in messages %}
         <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
