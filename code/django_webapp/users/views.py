@@ -40,10 +40,10 @@ def tutor_register(request):
 
 def login_page(request):
     if request.user.is_authenticated:
-        if request.user.is_student:
-            return redirect('studentdash:course_home')
-        else:
+        if request.user.is_tutor:
             return redirect('tutordash:home')
+        else:
+            return redirect('studentdash:course_home')
 
     else:
         if request.method == 'POST':
