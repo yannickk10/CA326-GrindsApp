@@ -37,7 +37,7 @@ def take_quiz(request, pk):
     student = request.user.student
 
     if student.quizzes.filter(pk=pk).exists():
-        return render(request, 'quiz_students/taken_quiz_list.html')
+        return render(request, 'quiz/students/taken_quiz_list.html')
 
     total_questions = quiz.questions.count()
     unanswered_questions = student.get_unanswered_questions(quiz)
