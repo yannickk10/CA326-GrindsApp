@@ -192,7 +192,6 @@ button {
   padding: 5px 12px 5px 12px;
   box-sizing: border-box;
   border-color: #009688;
-  box-shadow: 5px 5px 15px 0 #009688;
   font-family: 'Poppins', sans-serif;
   font-weight: normal;
   font-size: 17px;
@@ -204,10 +203,9 @@ button:hover{
   cursor: pointer;
   transition: 1.5s;
   transform: scale(0.95);
-  border-color: #000;
-  box-shadow: 0 0 20px 0 #000;
+  border-color: blue;
   color: #fff;
-  background-color: #000;
+  background-color: blue;
 }
 
 
