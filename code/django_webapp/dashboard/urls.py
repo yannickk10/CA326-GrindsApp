@@ -11,7 +11,7 @@ urlpatterns = [
 
     path('tutordash/', include(([
         path('home/', tutor_dashboard.CourseListView.as_view(), name='home'),
-        path('student/', tutor_dashboard.StudentListView.as_view(), name='student_detail'),
+        path('students/', tutor_dashboard.StudentListView.as_view(), name='student_detail'),
         path('course/add', tutor_dashboard.CourseCreateView.as_view(), name='course_add'),
     ], 'dashboard'), namespace='tutordash')),
 ]
