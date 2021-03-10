@@ -1,6 +1,7 @@
 {% extends 'quiz/base.html' %}
 
 {% block content %}
+  <h1>Quiz</h1>
   <ul class="nav nav-tabs mb-3">
     <li class="nav-item">
       <a class="nav-link{% if active == 'new' %} active{% endif %}" href="{% url 'students:quiz_list' %}">New</a>
@@ -22,20 +23,22 @@
       </thead>
       <tbody>
         {% for courses in request.user.members.all %}
-          {% for quiz in courses.tutor.quizzes.all %}
+          {% if courses.tutor.quizzes.all == None %}
             <tr>
-              <td class="align-middle">{{ quiz.name }}</td>
-              <td class="align-middle">{{ quiz.subject.get_html_badge }}</td>
-              <td class="align-middle">{{ quiz.questions_count }} questions</td>
-              <td class="text-right">
-                <a href="{% url 'students:take_quiz' quiz.pk %}" class="btn btn-primary">Start quiz</a>
-              </td>
+              <td class="bg-light text-center font-italic" colspan="4">No quiz has been assigned to you right now.</td>
             </tr>
-          {% empty %}
-            <tr>
-              <td class="bg-light text-center font-italic" colspan="4">No quiz matching your interests right now.</td>
-            </tr>
-          {% endfor %}  
+          {% else %}
+            {% for quiz in courses.tutor.quizzes.all %}
+              <tr>
+                <td class="align-middle">{{ quiz.name }}</td>
+                <td class="align-middle">{{ quiz.subject.get_html_badge }}</td>
+                <td class="align-middle">{{ quiz.questions_count }} questions</td>
+                <td class="text-right">
+                  <a href="{% url 'students:take_quiz' quiz.pk %}" class="btn btn-primary">Start quiz</a>
+                </td>
+              </tr>
+            {% endfor %}
+          {% endif %}
         {% endfor %}
       </tbody>
     </table>
