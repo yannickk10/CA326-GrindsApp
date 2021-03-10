@@ -36,11 +36,11 @@ class CourseListView(ListView):
         queryset = self.request.user.courses
         return queryset
 
-@method_decorator([login_required, teacher_required], name='dispatch')
+@method_decorator([login_required, tutor_required], name='dispatch')
 class StudentListView(ListView):
     model = Course
     context_object_name = 'courses'
-    template_name = 'quiz/tutors/student_detail.html'
+    template_name = 'dashboard/tutors/student_detail.html'
 
     def get_queryset(self):
         queryset = self.request.user.courses
