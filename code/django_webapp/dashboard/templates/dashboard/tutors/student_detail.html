@@ -14,7 +14,7 @@
       </thead>
       <tbody>
         {% for course in courses.all %}
-          {% if course.student == None %}
+          {% if course.student.all == None %}
           <tr>
             <td class="bg-light text-center font-italic" colspan="3">You have no student.</td>
           </tr>
