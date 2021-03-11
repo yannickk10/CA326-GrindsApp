@@ -1,16 +1,38 @@
 {% extends 'quiz/base.html' %}
 
-{% load crispy_forms_tags %}
-
 {% block content %}
-  <div class="progress mb-3">
-    <div class="progress-bar" role="progressbar" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ progress }}%"></div>
+  <h1>Quiz</h1>
+  <ul class="nav nav-tabs mb-3">
+    <li class="nav-item">
+      <a class="nav-link{% if active == 'new' %} active{% endif %}" style='color: black; font-size: 20px' href="{% url 'students:quiz_list' %}">New</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link{% if active == 'taken' %} active{% endif %}" style='color: black; font-size: 20px' href="{% url 'students:taken_quiz_list' %}">Taken</a>
+    </li>
+  </ul>
+
+  <div class="card">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Quiz</th>
+          <th>Subject</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for taken_quiz in taken_quizzes %}
+          <tr>
+            <td>{{ taken_quiz.quiz.name }}</td>
+            <td>{{ taken_quiz.quiz.subject.get_html_badge }}</td>
+            <td>{{ taken_quiz.score }}</td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td class="bg-light text-center font-italic" colspan="3">You haven't completed any quiz yet.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
-  <h2 class="mb-3">{{ quiz.name }}</h2>
-  <p class="lead">{{ question.text }}</p>
-  <form method="post" novalidate>
-    {% csrf_token %}
-    {{ form|crispy }}
-    <button type="submit" class="btn btn-primary">Next →</button>
-  </form>
 {% endblock %}
