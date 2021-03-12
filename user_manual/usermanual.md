@@ -1,5 +1,8 @@
-![](media/image1.png){width="5.869792213473316in"
-height="1.4674475065616799in"}
+
+# **TutorO - User Manual**
+
+
+![](media/media/image1.png)
 
 ## **Group Members:**
 
@@ -7,43 +10,43 @@ height="1.4674475065616799in"}
 
 -   Fawwaz Kekere-Ekun: 18408814
 
-## **[Table of contents]{.ul}**
+## **Table of contents**
 
-1.  **[User Manual]{.ul}**
+  **1. User Manual**
 
-    1.  Registration
+  - Registration
 
-    2.  Sign In
+  - Sign In
 
-    3.  Sign Out
+  -  Sign Out
 
-    4.  Contact Us
+  -  Contact Us
 
-2.  **[TutorManual]{.ul}**
+  **2. TutorManual**
 
-    1.  Add Course
+  -  Add Course
 
-    2.  Add Quiz
+  -  Add Quiz
 
-    3.  Change Quiz
+  -  Change Quiz
 
-    4.  Delete Quiz
+  -  Delete Quiz
 
-    5.  View Results
+  -  View Results
 
-    6.  View All Students
+  -  View All Students
 
-3.  **[Student Manual]{.ul}**
+  **3. Student Manual**
 
-    1.  View Courses
+  -  View Courses
 
-    2.  Enroll in Course
+  -  Enroll in Course
 
-    3.  View List of Quizzes
+  -  View List of Quizzes
 
-    4.  Take Quiz
+  -  Take Quiz
 
-    5.  View Taken Quizzes
+  -  View Taken Quizzes
 
 ## **0. Overview**
 
@@ -58,32 +61,31 @@ experience and also allow them to learn from the comfort of their own
 homes. This has been seen to be even more important due to the current
 ongoing issues in our world at the moment.
 
-## **User Manual**
+## **1. User Manual**
 
 **1.1 Registration**
 
 -   Once you have opened the website you will be brought to the homepage
     that will ask you whether you are a student or a tutor.
 
-![](media/image2.png){width="5.578125546806649in"
-height="2.941030183727034in"}
+![](media/media/image2.png)
 
 -   If you wish to register as a student click the "I'm a student"
     button otherwise, click "I'm a tutor" if you wish to register as a
     tutor.
 
 ![Graphical user interface, website Description automatically
-generated](media/image3.png){width="6.5in" height="3.420138888888889in"}
+generated](media/media/image3.png)
 
 -   If you have chosen to register as a student you will need to make
     sure to enter all fields: First Name, Username, Email, Interests
     (Only the ones you wish to study.) and Password.
 
 ![Graphical user interface, application Description automatically
-generated](media/image4.png){width="6.5in" height="3.426388888888889in"}
+generated](media/media/image4.png)
 
 ![Graphical user interface Description automatically
-generated](media/image5.png){width="6.5in" height="3.421527777777778in"}
+generated](media/media/image5.png)
 
 -   The username you enter must be unique.
 
@@ -97,29 +99,26 @@ generated](media/image5.png){width="6.5in" height="3.421527777777778in"}
     will be brought to the sign in page.
 
 ![A screenshot of a computer Description automatically generated with
-low confidence](media/image6.png){width="6.5in"
-height="3.426388888888889in"}
+low confidence](media/media/image35.png)
 
 -   Enter your username into the username field and your password into
     the password field and click the login button.
 
 ![Graphical user interface, chart Description automatically
-generated](media/image7.png){width="6.5in"
-height="3.4034722222222222in"}
+generated](media/media/image7.png)
 
 -   You will then be brought to the student dashboard if you are a
     student and the tutor dashboard if you are a tutor.
 
-**[Student Dasboard]{.ul}**
+**Student Dasboard**
 
 ![Graphical user interface, text, application, email Description
-automatically generated](media/image8.png){width="6.5in"
-height="3.428472222222222in"}
+automatically generated](media/media/image8.png)
 
-**[Tutor Dashboard]{.ul}**
+**Tutor Dashboard**
 
 ![Graphical user interface, application Description automatically
-generated](media/image9.png){width="6.5in" height="3.4125in"}
+generated](media/media/image9.png)
 
 -   If you have found yourself on this page by an accident and do not
     have an account you can click either the "Register as a student" or
@@ -127,8 +126,7 @@ generated](media/image9.png){width="6.5in" height="3.4125in"}
     pages.
 
 ![Graphical user interface, chart Description automatically
-generated](media/image10.png){width="6.5in"
-height="3.4034722222222222in"}
+generated](media/media/image10.png)
 
 **1.3 Sign Out**
 
@@ -137,88 +135,77 @@ height="3.4034722222222222in"}
     will see a logout button to the right of it.
 
 ![Graphical user interface, application Description automatically
-generated](media/image11.png){width="6.5in" height="3.4125in"}
+generated](media/media/image11.png)
 
 -   Click this logout button and you will be brought to a logout page in
     which you can log back in as a different user.
 
 ![Text Description automatically
-generated](media/image12.png){width="6.5in"
-height="3.392361111111111in"}
+generated](media/media/image12.png)
 
-2.  ## **Tutor Manual**
+## **2. Tutor Manual**
 
-    1.  **Add Course**
+**2.1 Add Course**
 
 -   When a tutor first logs in they will be brought to the courses page
     where they will be able to view and add courses.
 
 ![Graphical user interface, application Description automatically
-generated](media/image9.png){width="6.5in" height="3.4125in"}
+generated](media/media/image9.png)
 
 -   Press the "Add Course" button to be brought to the page to add a
     course.
 
-![](media/image13.png){width="6.5in" height="3.0965277777777778in"}
+![](media/media/image13.png)
 
 -   You will now need to fill in the title, description and subject
     fields. If you wish to go back you can click the "Nevermind" button
     otherwise click the "Save Changes" button.
 
 ![Graphical user interface, application Description automatically
-generated](media/image14.png){width="6.5in"
-height="3.408333333333333in"}
+generated](media/media/image14.png)
 
 **2.2 Add Quiz**
 
 -   Go to the quiz page via the navigation bar.
 
 ![Graphical user interface, application, website Description
-automatically generated](media/image15.png){width="6.5in"
-height="2.8847222222222224in"}
+automatically generated](media/media/image15.png)
 
 -   You will see a list of all your quizzes made if any. Click the "Add
     Quiz" button to add a new quiz.
 
 ![Graphical user interface, application Description automatically
-generated](media/image16.png){width="6.5in"
-height="3.4034722222222222in"}
+generated](media/media/image16.png)
 
 -   You can now enter the name of the quiz and the subject it's related
-    to.
-
-> To add questions, click the "Add question" button at the button left
-> corner.
+    to. To add questions, click the "Add question" button at the button left corner.
 
 ![Graphical user interface, application, Teams Description automatically
-generated](media/image17.png){width="6.5in"
-height="3.379166666666667in"}
+generated](media/media/image17.png)
 
 -   Enter a question and click save.
 
 ![Graphical user interface, application, Teams Description automatically
-generated](media/image18.png){width="6.5in"
-height="3.0381944444444446in"}
+generated](media/media/image18.png)
 
 -   After inputting a question and clicking save, you will have multiple
     answer fields where you will have to input at least two answers.
 
 ![Graphical user interface, text, application, email Description
-automatically generated](media/image19.png){width="6.5in"
-height="3.1527777777777777in"}
+automatically generated](media/media/image19.png)
 
 -   To the right of those answer you have to select at least one box as
     the correct answer.
 
 ![Graphical user interface, application Description automatically
-generated](media/image20.png){width="6.5in" height="3.14375in"}
+generated](media/media/image20.png)
 
 -   At the bottom of the page, If you wish to go back, you can click the
     "Nevermind" button otherwise click the "Save Changes" button
 
 ![Graphical user interface, text, application, email Description
-automatically generated](media/image21.png){width="6.5in"
-height="3.1284722222222223in"}
+automatically generated](media/media/image21.png)
 
 **2.3 Change Quiz**
 
@@ -227,15 +214,14 @@ height="3.1284722222222223in"}
     able to change the fields.
 
 ![Graphical user interface, application Description automatically
-generated](media/image22.png){width="6.5in"
-height="2.7131944444444445in"}
+generated](media/media/image22.png)
 
 -   After you have finished changing the questions to the quiz you can
     click "Save Changes" or "Nevermind" if you wish to discard your
     changes.
 
 ![Graphical user interface, application Description automatically
-generated](media/image23.png){width="6.5in" height="3.25in"}
+generated](media/media/image23.png)
 
 **2.4 Delete Quiz**
 
@@ -244,7 +230,7 @@ generated](media/image23.png){width="6.5in" height="3.25in"}
     right of the nevermind button, there'll be a delete button
 
 ![Graphical user interface, application Description automatically
-generated](media/image24.png){width="6.5in" height="3.25in"}
+generated](media/media/image24.png)
 
 **2.5 View Results**
 
@@ -253,18 +239,14 @@ generated](media/image24.png){width="6.5in" height="3.25in"}
     view results button.
 
 ![Graphical user interface, application Description automatically
-generated](media/image25.png){width="6.5in"
-height="2.7131944444444445in"}
+generated](media/media/image25.png)
 
 -   By clicking this button you will be able to see the students who
     have taken this quiz.
 
-> On the top to the right side of the table you will see the average
-> score of all your. students.
 
 ![Graphical user interface, application Description automatically
-generated](media/image26.png){width="6.5in"
-height="2.1215277777777777in"}
+generated](media/media/image26.png)
 
 -   On the top to the right side of the table you will see the average
     score of all your. students.
@@ -274,17 +256,14 @@ height="2.1215277777777777in"}
 -   Click on the student tab on the navigation bar.
 
 ![Graphical user interface, text, application, website Description
-automatically generated](media/image27.png){width="6.5in"
-height="2.339583333333333in"}
+automatically generated](media/media/image27.png)
 
 -   Here you will see a list of the students enrolled in your course(s)
     also with the subject
 
-> they're enrolled for along with their email address for contacting.
 
 ![Graphical user interface, application Description automatically
-generated](media/image28.png){width="6.5in"
-height="2.9631944444444445in"}
+generated](media/media/image28.png)
 
 ## **Student Manual**
 
@@ -294,8 +273,7 @@ height="2.9631944444444445in"}
     page.
 
 ![Graphical user interface, text, application, email Description
-automatically generated](media/image8.png){width="6.5in"
-height="3.428472222222222in"}
+automatically generated](media/media/image8.png)
 
 -   If you are on any other page you can go to the nav bar and click
     Courses. This will allow you to view all available courses.
@@ -311,23 +289,20 @@ height="3.428472222222222in"}
     the "Enroll Now" button otherwise click "go back".
 
 ![Graphical user interface, text, application, email Description
-automatically generated](media/image29.png){width="6.5in"
-height="2.972916666666667in"}
+automatically generated](media/media/image29.png)
 
 **3.3 View List of Quizzes**
 
 -   To view your quizzes look to the navbar and click "Quizzes".
 
 ![Graphical user interface, text, application, email Description
-automatically generated](media/image30.png){width="6.5in"
-height="3.073611111111111in"}
+automatically generated](media/media/image30.png)
 
 -   This will bring you to the quiz list page which will display a list
     of all your available quizzes.
 
 ![Graphical user interface, application Description automatically
-generated](media/image31.png){width="6.5in"
-height="2.279861111111111in"}
+generated](media/media/image31.png)
 
 **3.4 Take Quiz**
 
@@ -336,14 +311,13 @@ height="2.279861111111111in"}
 -   Click 'start quiz' on the quiz you want to take.
 
 ![Graphical user interface, application Description automatically
-generated](media/image32.png){width="6.5in"
-height="2.279861111111111in"}
+generated](media/media/image32.png)
 
 -   You will now be brought to the quiz where you must answer the
     questions on the quiz.
 
 ![Rectangle Description automatically generated with low
-confidence](media/image33.png){width="6.5in" height="2.31875in"}
+confidence](media/media/image33.png)
 
 **3.5 View Taken Quizzes**
 
@@ -357,8 +331,7 @@ confidence](media/image33.png){width="6.5in" height="2.31875in"}
 -   Click on the 'Taken' tab
 
 ![Graphical user interface, text, application Description automatically
-generated](media/image34.png){width="6.5in"
-height="2.223611111111111in"}
+generated](media/media/image34.png)
 
 -   This will show you a table of the quizzes you've completed if any
     along with your score.
