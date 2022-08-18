@@ -1,19 +1,19 @@
-# **Functional Specification - *Student Carpooling***
+# **Functional Specification - TutorO***
 
 ## Group Members
 
   + Yann Ndjatang: 18337813
-  + Fawwaz Kekere-Ekun: 18408814 
-  
+  + Fawwaz Kekere-Ekun: 18408814
+
 
 # **Table of contents**
 
  **1. Introduction**  
-      
+
  - [1.1 Overview](#11-overview)
-    
+
  - [1.2 Business Context](#12-business-context)
-    
+
  - [1.3 Glossary](#13-glossary)
 
  **2. General Description**
@@ -398,4 +398,3 @@ Requires the user to have first been successfully logged in, before logging out.
 ## 5.2 Data Flow Diagram
 
 - ![Data Flow Diagram](Images/Data_Flow_Diagram.png)
-
